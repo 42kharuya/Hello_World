@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var outputText = "Hello, world!"
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text(outputText)
+                .font(.largeTitle)
+            Button("切り替えボタン") {
+                if (outputText == "Hi, Swift!"){
+                    outputText = "Hello, world!"
+                }else if (outputText == "Hello, world!"){
+                    outputText = "Hi, Swift!"
+                }
+            }
+            .padding(.all)
+            .background(.blue)
+            .foregroundColor(.white)
         }
-        .padding()
     }
 }
 
